@@ -8,49 +8,49 @@ import java.io.OutputStreamWriter;
 
 public class Main {
 	
-	static int numOfsubStr;
-	static int[] numOfChar;
-	static char[] targetChars;
-   static String[] subStr;
-   static int numOfResult = 0;
+  static int numOfsubStr;
+  static int[] numOfChar;
+  static char[] targetChars;
+  static String[] subStr;
+  static int numOfResult = 0;
    
-	@SuppressWarnings("resource")
-	public static void main(String[] args) throws IOException {
-   	FileInputStream in = null;
+  @SuppressWarnings("resource")
+  public static void main(String[] args) throws IOException {
+    FileInputStream in = null;
    	FileOutputStream out = null;
-       in = new FileInputStream("src/problem_3_Set2.in");
-       out = new FileOutputStream("src/problem_3_Set3.out");
-       InputStreamReader isr = new InputStreamReader(in);
-       OutputStreamWriter osr = new OutputStreamWriter(out);
-       BufferedReader br = new BufferedReader(isr);
-       BufferedWriter bw = new BufferedWriter(osr);
-       
-       int cases = Integer.parseInt(br.readLine());
-       String str;
-       numOfChar = new int[26];
-       
-       
-       while(cases-- > 0) {
-       	str = br.readLine();
-       	numOfsubStr = (str.length() * (str.length() + 1)) / 2;
-       	subStr = new String[numOfsubStr];
-       	for(int i = 0, x=0; i<str.length(); i++) {
-       		for(int j = i; j<str.length(); j++, x++) {
-       			subStr[x] = str.substring(i,j+1);
-       		}
-       	}
-       	
+    in = new FileInputStream("src/problem_3_Set2.in");
+    out = new FileOutputStream("src/problem_3_Set3.out");
+    InputStreamReader isr = new InputStreamReader(in);
+    OutputStreamWriter osr = new OutputStreamWriter(out);
+    BufferedReader br = new BufferedReader(isr);
+    BufferedWriter bw = new BufferedWriter(osr);
 
-           bw.write(String.valueOf(getNumOfResult()));
-           bw.newLine();
-       }
-       bw.close();
+    int cases = Integer.parseInt(br.readLine());
+    String str;
+    numOfChar = new int[26];
+
+
+    while(cases-- > 0) {
+    	str = br.readLine();
+    	numOfsubStr = (str.length() * (str.length() + 1)) / 2;
+    	subStr = new String[numOfsubStr];
+    	for(int i = 0, x=0; i<str.length(); i++) {
+    		for(int j = i; j<str.length(); j++, x++) {
+    			subStr[x] = str.substring(i,j+1);
+    		}
+    	}
+    	
+
+       bw.write(String.valueOf(getNumOfResult()));
+       bw.newLine();
+    }
+    bw.close();
    }
 
 	private static int getNumOfResult() {
-		boolean result = true;
+    boolean result = true;
        
-		// TODO Auto-generated method stub
+    // TODO Auto-generated method stub
    	while(numOfsubStr-- > 0){
        	targetChars = new char[subStr[numOfsubStr].length()];
        	subStr[numOfsubStr].getChars(0, subStr[numOfsubStr].length(), targetChars, 0);
