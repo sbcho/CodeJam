@@ -1,0 +1,29 @@
+package hackerrank_cracking_02_strings;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class hackerrank_cracking_02_strings {
+
+    public static int numberNeeded(String first, String second) {
+    	char[] a = first.toCharArray();
+    	char[] b = second.toCharArray();
+    	Arrays.sort(a);
+    	Arrays.sort(b);
+    	
+    	
+		return 0;
+    }
+  
+    public static void main(String[] args) {
+        int a = 'a';
+        System.out.println(a);
+    	Scanner in = new Scanner(System.in);
+        String a = in.next();
+        String b = in.next();
+        System.out.println(numberNeeded(a, b));
+    }
+
+}
